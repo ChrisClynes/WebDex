@@ -1,17 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
-import Home from '../pages/Home';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { Results } from './Results';
+
 
 export const Routing = () => {
     return (
         <div className="p-4">
-            <Router>
                 <Routes>
-                    <Route exact path="/" element={<Home />}>
-                        <Navigate replace to="/search" />
-                    </Route>
+                    <Route exact path="/" component={<Navigate to="/search" replace/>} />
+                    <Route exact path="/search" element={<Results />} />
+                    <Route exact path="/images" element={<Results />} />
+                    <Route exact path="/news" element={<Results />} />
+                    <Route exact path="/videos" element={<Results />} />
                 </Routes>
-            </Router>
-        </div>
+        </div>  
     );
 }
