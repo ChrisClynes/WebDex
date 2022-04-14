@@ -5,18 +5,22 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Routing } from './components/Routing';
 
+import { ResultContextProvider } from './contexts/ResultContextProvider';
+
 const App = () => {
     const [darkTheme, setDarkTheme] = useState(false);
     return (
-        <BrowserRouter>
-            <div className={darkTheme ? 'dark' : ''}>
-                <div className="bg-gray-100 dark:bg-gray-900 dark:text-gray-200 min-h-screen">{/*Tailwind CSS className Styles, in dark mode, set to darker color*/}
-                    <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
-                    <Routing />
-                    <Footer />
+        <ResultContextProvider>
+            <BrowserRouter>
+                <div className={darkTheme ? 'dark' : ''}>
+                    <div className="bg-gray-100 dark:bg-gray-900 dark:text-gray-200 min-h-screen">{/*Tailwind CSS className Styles, in dark mode, set to darker color*/}
+                        <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
+                        <Routing />
+                        <Footer />
+                    </div>
                 </div>
-            </div>
-        </BrowserRouter>
+            </BrowserRouter>
+        </ResultContextProvider>
     );
 }
 
