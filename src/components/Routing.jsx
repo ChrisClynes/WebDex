@@ -11,7 +11,7 @@ export const Routing = () => {
                     <Route exact path="/search" element={<Results />} />
                     <Route exact path="/image" element={<Results />} />
                     <Route exact path="/news" element={<Results />} />
-                    <Route exact path="/videos" element={<Results />} />
+                    <Route exact path="/videos" element={<Results />} /> 
                 </Routes>
         </div>  
     );

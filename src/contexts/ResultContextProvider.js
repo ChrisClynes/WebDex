@@ -9,7 +9,7 @@ const baseUrl = 'https://google-search3.p.rapidapi.com/api/v1';
 export const ResultContextProvider = ({ children }) => {
     const [results, setResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [searchTerm, setSearchTerm] = useState('pandas');
+    const [searchTerm, setSearchTerm] = useState('');
     
     //to get results for search by type: videos, images...
     const getResults = async (type) => {
@@ -26,16 +26,22 @@ export const ResultContextProvider = ({ children }) => {
         });
         const data = await response.json();
 
-        console.log(data);
+        //since results.entries causes a issue being that entries is a built-in function, we have to modify how we get the results
+        if(type.includes('/news')) {
+            setResults(data.entries);
+        }else if(type.includes('/image')) {
+            setResults(data.image_results);
+        }else {
+            setResults(data.results);
+        }
 
-        setResults(data);
         setIsLoading(false);
     }
     return (
             // Use a Provider to pass the current data to the tree below.
             // Any component can read it, no matter how deep it is.
             //render all child components, "those that are wrapped"
-        <ResultContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, isLoading }}>
+        <ResultContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, setResults, isLoading }}>
             {children}
         </ResultContext.Provider>
     );
