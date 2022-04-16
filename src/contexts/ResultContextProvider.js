@@ -14,7 +14,7 @@ export const ResultContextProvider = ({ children }) => {
     //to get results for search by type: videos, images...
     const getResults = async (type) => {
         setIsLoading(true);
-
+        
         const response = await fetch(`${baseUrl}${type}`, {
             method: 'GET',
             headers: {
@@ -28,20 +28,20 @@ export const ResultContextProvider = ({ children }) => {
 
         //since results.entries causes a issue being that entries is a built-in function, we have to modify how we get the results
         if(type.includes('/news')) {
-            setResults(data.entries);
+            setResults([data.entries]);
         }else if(type.includes('/image')) {
-            setResults(data.image_results);
+            setResults([data.image_results]);
         }else {
-            setResults(data.results);
+            setResults([data.results]);
         }
-
+        console.log(data.results)
         setIsLoading(false);
     }
     return (
             // Use a Provider to pass the current data to the tree below.
             // Any component can read it, no matter how deep it is.
             //render all child components, "those that are wrapped"
-        <ResultContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, setResults, isLoading }}>
+        <ResultContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, isLoading, setResults }}>
             {children}
         </ResultContext.Provider>
     );
