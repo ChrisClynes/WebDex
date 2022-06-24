@@ -41,7 +41,7 @@ export const ResultContextProvider = ({ children }) => {
             // Use a Provider to pass the current data to the tree below.
             // Any component can read it, no matter how deep it is.
             //render all child components, "those that are wrapped"
-        <ResultContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, isLoading, setResults }}>
+        <ResultContext.Provider value={{ getResults, results, searchTerm, setSearchTerm, isLoading }}>
             {children}
         </ResultContext.Provider>
     );

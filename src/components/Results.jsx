@@ -89,5 +89,4 @@ export const Results = () => {
                 return 'error!';
         }
     }
-    
 }

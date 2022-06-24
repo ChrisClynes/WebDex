@@ -27,7 +27,7 @@ useEffect(() => {
                 {text !== '' && (
                     <button type="button" className="absolute top-1.5 right-4 text-2xl text-gray-500" onClick={() => setText('')}>
                         x
-                    </button>
+                    </button>//clear input value
                 )}
             <Links />
         </div>

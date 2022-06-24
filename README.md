@@ -1,4 +1,15 @@
 
+# h1 WebDex
+# h3 a google search clone
+
+React-based project that uses a google search api to search the web
++ search pages, news, images, and videos
++ debounce search
++ dark mode
+
+![Homepage](markdown\images\homepage_img.PNG?raw=true "Home")
+![Dark mode](markdown\images\dark_img.PNG?raw=true "Dark")
+
 ## Dependencies
    "@craco/craco": "^6.4.3",
     "@testing-library/jest-dom": "^5.16.4",
