@@ -7,8 +7,8 @@ React-based project that uses a google search api to search the web
 + debounce search
 + dark mode
 
-![Homepage](./markdown\images\homepage_img.PNG "Home")
-![Dark mode](./markdown\images\homepage_img.PNG "Dark")
+![Homepage](https://raw.githubusercontent.com/ChrisClynes/WebDex/master/markdown/images/homepage_img.PNG?raw=true "Home")
+![Dark mode](https://raw.githubusercontent.com/ChrisClynes/WebDex/master/markdown/images/dark_img.PNG?raw=true "Dark")
 
 ## Dependencies
    "@craco/craco": "^6.4.3",
