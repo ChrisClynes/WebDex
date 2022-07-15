@@ -7,7 +7,7 @@ import { Links } from './Links';
 export const Search = () => {
     const [text, setText] = useState('');
     const { setSearchTerm } = useResultContext();
-    const [debouncedValue] = useDebounce(text, 300);//value of text, every 300ms
+    const [debouncedValue] = useDebounce(text, 400);//value of text, every 400ms
 
 useEffect(() => {
     if(debouncedValue) {

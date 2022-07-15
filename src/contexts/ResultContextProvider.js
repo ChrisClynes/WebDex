@@ -26,7 +26,7 @@ export const ResultContextProvider = ({ children }) => {
         });
         const data = await response.json();
 
-        //since results.entries causes a issue being that entries is a built-in function, we have to modify how we get the results
+        //since results.entries causes an issue being that entries is a built-in function, we have to modify how we get the results
         if(type.includes('/news')) {
             setResults([data.entries]);
         }else if(type.includes('/image')) {

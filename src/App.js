@@ -13,7 +13,8 @@ const App = () => {
         <BrowserRouter>
             <ResultContextProvider>
                 <div className={darkTheme ? 'dark' : ''}>
-                    <div className="bg-gray-100 dark:bg-gray-900 dark:text-gray-200 min-h-screen">{/*Tailwind CSS className Styles, in dark mode, set to darker color*/}
+                    {/*Tailwind CSS className Styles, in dark mode*/}
+                    <div className="bg-gray-100 dark:bg-gray-900 dark:text-gray-200 min-h-screen">
                         <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
                         <Routing />
                         <Footer />
