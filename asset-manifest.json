@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/webdex/static/css/main.57a20c1b.css",
-    "main.js": "/webdex/static/js/main.05887294.js",
+    "main.js": "/webdex/static/js/main.56a40c61.js",
     "index.html": "/webdex/index.html",
     "main.57a20c1b.css.map": "/webdex/static/css/main.57a20c1b.css.map",
-    "main.05887294.js.map": "/webdex/static/js/main.05887294.js.map"
+    "main.56a40c61.js.map": "/webdex/static/js/main.56a40c61.js.map"
   },
   "entrypoints": [
     "static/css/main.57a20c1b.css",
-    "static/js/main.05887294.js"
+    "static/js/main.56a40c61.js"
   ]
 }
