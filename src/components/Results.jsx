@@ -11,9 +11,7 @@ export const Results = () => {
 
     useEffect(() => {
         if(searchTerm) {
-            if(location.pathname == '/webdex') {
-                getResults(`/search/q=${searchTerm}&num=50`);
-            }else if(location.pathname == '/videos') {
+            if(location.pathname == '/videos') {
                 getResults(`/search/q=${searchTerm} videos`);
             }else {
                 getResults(`${location.pathname}/q=${searchTerm}&num=50`)//num=50 is the number of results
