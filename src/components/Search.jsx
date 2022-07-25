@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDebounce } from 'use-debounce';//used for input fields when requesting data to wait between keystrokes, api calls as few times as possible
+import { MdClose } from 'react-icons/md';
 
 import { useResultContext } from '../contexts/ResultContextProvider';
 import { Links } from './Links';
@@ -25,8 +26,8 @@ useEffect(() => {
                 onChange={(e) => setText(e.target.value)}
                 />
                 {text !== '' && (
-                    <button type="button" className="absolute top-1.5 right-4 text-2xl text-gray-500" onClick={() => setText('')}>
-                        x
+                    <button type="button" className="absolute top-3.5 right-4 text-2xl text-gray-500 " onClick={() => setText('')}>
+                        <MdClose />
                     </button>//clear input value
                 )}
             <Links />
