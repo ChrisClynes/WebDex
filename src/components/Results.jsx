@@ -11,7 +11,9 @@ export const Results = () => {
 
     useEffect(() => {
         if(searchTerm) {
-            if(location.pathname == '/videos') {
+            if(location.pathname == '/webdex') {
+                getResults(`/search/q=${searchTerm}&num=50`);
+            }else if(location.pathname == '/videos') {
                 getResults(`/search/q=${searchTerm} videos`);
             }else {
                 getResults(`${location.pathname}/q=${searchTerm}&num=50`)//num=50 is the number of results
@@ -23,6 +25,27 @@ export const Results = () => {
         return <Loading />;
     }else {
         switch (location.pathname) {
+            //default search
+            case '/webdex':
+                return (
+                    <div className="flex flex-col  space-y-6 sm:px-56">
+                        {results[0]?.map(({ link, title, description }, i) => (
+                            <div key={i} className="max-w-3xl w-full">
+                                <a href={link} target="_blank" rel="noreferrer">{/*noreferrer link type hides referrer information when the link is clicked, no analytics data*/}
+                                    <p className="text-lg hover:underline dark:text-red-400 text-red-800">
+                                        {title}
+                                    </p>
+                                    <div className="text-sm dark:text-gray-200 text-gray-700">
+                                        {description && description?.length > 200 ? `${description.substring(0, 200)}...` : description}
+                                    </div>
+                                    <p className="text-sm dark:text-blue-300 text-blue-800">
+                                        {link.length > 30 ? link.substring(0, 30) : link}
+                                    </p>
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                );
             case '/search':
                 return (
                     <div className="flex flex-col  space-y-6 sm:px-56">
